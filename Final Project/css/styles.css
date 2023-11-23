@@ -30,33 +30,8 @@ h3.headline {
   margin-top: 2em;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 0.5em;
-  margin-bottom: 1em;
-  border: 1px solid #716040;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  color: #716040;
-}
-
-input[type="submit"] {
-  background-color: #020826;
-  color: #eaddcf;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5em 1em;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-label {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  color: #716040;
+ fieldset:not(:first-of-type) {
+         display: none;
 }
 
 li{
@@ -252,19 +227,6 @@ video {
   transition: max-height 0.2s ease-out;
 }
 
-.contact-form {
-  background-color: #eaddcf;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2em;
-  text-align: left;
-}
-
-.contact-form h4 {
-  font-size: 1.8rem;
-  color: #020826;
-}
-
 .footer {
   background-color: #113946;
   color: white;
@@ -316,6 +278,106 @@ video {
     display: none;
 }
 
+ .form-group {
+    margin-bottom: 15px;
+ }
+
+ .progress {
+    counter-reset: step;
+ }
+
+ .progress li {
+    list-style-type: none;
+    width: 25%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    color: #7d7d7d;
+    cursor: pointer;
+ }
+
+ .progress li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background: #7d7d7d;
+    color: white;
+ }
+
+ .progress li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #7d7d7d;
+    position: absolute;
+    left: -50%;
+    top: 12px;
+    z-index: -1;
+ }
+
+ .progress li:first-child:after {
+    content: none;
+ }
+
+ .progress li.active:before {
+    background: #4caf50;
+    color: white;
+ }
+
+ .progress li.active:after {
+    background: #4caf50;
+ }
+
+ .progress li.active:first-child:before {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+ }
+
+ .progress li.active:last-child:before {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+ }
+
+ .action-button {
+    width: 100px;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+ }
+
+ .next {
+    background-color: #4caf50;
+    float: right;
+ }
+
+ .previous {
+    background-color: #f44336;
+    float: left;
+ }
+ .submit {
+   background-color: #007bff;
+   color: #fff;
+   float: right;
+}
+
+#container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+ }
+ 
 #timer {
     font-size: 3rem;
     margin-top: 20px;

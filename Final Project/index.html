@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page - Nikola Tesla</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">Tesla's World</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="biography.html">Biography</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="inventions.html">Inventions</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                            <li id="toDoListDropdownItem"><a class="dropdown-item" href="#">To-Do List</a></li>
+                            <li id="countdownTimerDropdownItem"><a class="dropdown-item" href="#">Countdown Timer</a></li>
+                            <li id="quizDropdownItem"><a class="dropdown-item" href="quiz.html">Drag-and-Drop Quiz</a></li>
+                        </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+
+    <!-- Carousel -->
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+    </ol>
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="images/slide1.jpg" class="d-block w-100" alt="Tesla's Lab">
+              <div class="carousel-caption d-none d-md-block">
+                  <h3>Welcome to Tesla's World</h3>
+                  <p class="lead">Explore the life and inventions of Nikola Tesla.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="images/slide2.jpg" class="d-block w-100" alt="Tesla's Lab">
+              <div class="carousel-caption d-none d-md-block">
+                  <h3>Discover His Legacy</h3>
+                  <p class="lead">Learn about his contributions to science and technology.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="images/slide3.jpg" class="d-block w-100" alt="Tesla's Lab">
+              <div class="carousel-caption d-none d-md-block">
+                  <h3>Discover His Legacy</h3>
+                  <p class="lead">Learn about his contributions to science and technology.</p>
+              </div>
+          </div>
+      </div>
+      <!-- Carousel Controls -->
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+    </div>
+
+    <header>
+        <h1 class="title">Nikola Tesla</h1>
+        <p class="title-description">The <strong>Genius Inventor</strong> and <strong>Electrical Engineer</strong></p>
+        <figure class="media">
+            <img class="media__img" src="images/Tesla_1890.jpeg" alt="Nikola Tesla in his laboratory with electrical equipment">
+        </figure>
+    </header>
+
+    <article class="tribute-info">
+        <h2 class="headline">Here's a timeline of Nikola Tesla's life:</h2>
+        <ul class="list-of-time">
+            <li><time class="time">1856</time> - Born in Smiljan, Austrian Empire.</li>
+            <li>
+                <time class="time">1875</time> - Enrolls at the Technical University of Graz to study electrical engineering.
+            </li>
+            <li>
+                <time class="time">1884</time> - Immigrates to the United States to work with Thomas Edison but eventually conflicts arise, leading to Tesla leaving Edison's company.
+            </li>
+            <li>
+                <time class="time">1888</time> - Develops the alternating current (AC) electrical system, revolutionizing the power industry.
+            </li>
+            <li>
+                <time class="time">1891</time> - Becomes a naturalized American citizen.
+            </li>
+            <li>
+                <time class="time">1893</time> - Demonstrates wireless power transmission and creates the "Tesla coil."
+            </li>
+            <li>
+                <time class="time">1896</time> - Constructs a laboratory in Colorado Springs for high-voltage, high-frequency experiments.
+            </li>
+            <li>
+                <time class="time">1899</time> - Begins experiments at Wardenclyffe Tower, aiming to transmit electricity wirelessly.
+            </li>
+            <li>
+                <time class="time">1901</time> - Experiences financial difficulties, leading to the abandonment of the Wardenclyffe project.
+            </li>
+            <li>
+                <time class="time">1943</time> - Dies alone in New York City, in relative obscurity, but his contributions to science and technology continue to inspire generations.
+            </li>
+        </ul>
+        <blockquote class="quote">
+            <p>
+                "The day science begins to study non-physical phenomena, it will make more progress in one decade than in all the previous centuries of its existence."
+            </p>
+            <cite>-- Nikola Tesla</cite>
+        </blockquote>
+        <h3 class="headline">Tesla's Contributions to Science and Technology</h3>
+        <p>
+            Nikola Tesla was a pioneering <strong>electrical engineer</strong>
+            and inventor known for his contributions to the development of the
+            <strong>alternating current (AC)</strong> electrical system, which
+            transformed the power industry. He also invented the <strong>Tesla
+            coil</strong>, a device that is still used in electronics and wireless technology.
+        </p>
+        <p>
+            Tesla's work laid the foundation for many modern technologies,
+            including <strong>wireless communication</strong> and <strong>radio</strong>.
+            Despite facing financial difficulties and obscurity in his later years, his visionary
+            ideas continue to inspire <strong>scientists</strong> and <strong>inventors</strong> to this day.
+        </p>
+    </article>
+    <table>
+        <tr>
+            <th>Invention</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td>Alternating Current (AC)</td>
+            <td>1888</td>
+        </tr>
+        <tr>
+            <td>Tesla Coil</td>
+            <td>1893</td>
+        </tr>
+        <tr>
+            <td>Wireless Power Transmission</td>
+            <td>1893</td>
+        </tr>
+    </table>
+    <div class="additional-info">
+        <h3>Additional Information</h3>
+        <p>
+            Nikola Tesla's work also included experiments with <strong>X-rays</strong>
+            and <strong>electricity</strong>. He had a deep interest in <strong>wireless communication</strong>
+            and believed in the possibility of <strong>transmitting energy wirelessly</strong> over long distances.
+        </p>
+    </div>
+    <!-- Modal for To-Do List -->
+      <div class="modal fade" id="todoListModal" tabindex="-1" aria-labelledby="todoListModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="todoListModalLabel">To-Do List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <!-- To-Do List Section -->
+                    <div class="container mt-5">
+                        <h1 class="mb-4">To-Do List</h1>
+                          <div class="input-group mb-3">
+                              <input type="text" id="taskInputModal" class="form-control" placeholder="New task" onkeydown="if (event.key === 'Enter') addTaskModal()">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" onclick="addTaskModal()">+</button>
+                                </div>
+                          </div>
+                    <ul id="taskListModal" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Countdown Timer -->
+    <div class="modal fade" id="countdownTimerModal" tabindex="-1" aria-labelledby="countdownTimerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="countdownTimerModalLabel">Countdown Timer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <!-- Timer countdown -->
+                    <div class="container mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="countdown text-center">
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" id="durationModal" placeholder="Set Timer (in seconds)">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" id="startButtonModal">Start</button>
+                                        </div>
+                                    </div>
+                                    <div id="timerModal" class="hidden display-4">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+        <img width="24" height="24" src="https://img.icons8.com/ios/50/000000/circled-up-2.png" alt="Up Arrow Icon"/>
+    </button>
+
+    <hr>
+
+    <footer class="footer">
+        <p>
+            If you want to learn more about the incredible life and achievements of Nikola Tesla, you can read his <a href="https://en.wikipedia.org/wiki/Nikola_Tesla" target="_blank">Wikipedia Page</a>.
+        </p>
+    </footer>
+
+</body>
+</html>

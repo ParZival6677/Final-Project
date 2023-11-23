@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikola Tesla's Inventions Quiz</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">Tesla's World</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="biography.html">Biography</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="inventions.html">Inventions</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1 class="mt-4 mb-4">Nikola Tesla's Inventions Quiz</h1>
+        <div class="row">
+            <div class="col-6">
+                <div class="draggable-list">
+                    <div class="draggable-item" draggable="true">Magnifying Transmitter</div>
+                    <div class="draggable-item" draggable="true">Neon Lamp</div>
+                    <div class="draggable-item" draggable="true">Induction Motor</div>
+                    <div class="draggable-item" draggable="true">Niagara Falls Transformer House</div>
+                    <div class="draggable-item" draggable="true">Wireless Power Transmission</div>
+                    <div class="draggable-item" draggable="true">Radio</div>
+                    <div class="draggable-item" draggable="true">Tesla Coil</div>
+                    <div class="draggable-item" draggable="true">Shadowgraph</div>
+                    <div class="draggable-item" draggable="true">Tesla Turbine</div>
+                    <div class="draggable-item" draggable="true">Alternating Current (AC)</div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="dropzones">
+                    <div class="dropzone" data-category="ac"><img src="images/ac.jpeg" alt=""></div>
+                    <div class="dropzone" data-category="coil"><img src="images/tesla_coil.jpg" alt=""></div>
+                    <div class="dropzone" data-category="motor"><img src="images/im.jpg" alt=""></div>
+                    <div class="dropzone" data-category="wpt"><img src="images/wpt.jpg" alt=""></div>
+                    <div class="dropzone" data-category="radio"><img src="images/radio.jpg" alt=""></div>
+                    <div class="dropzone" data-category="mgtr"><img src="images/mgtr.jpg" alt=""></div>
+                    <div class="dropzone" data-category="tesla_turbine"><img src="images/tesla_turbine.jpg" alt=""></div>
+                    <div class="dropzone" data-category="shadowgraph"><img src="images/shadowgraph.jpg" alt=""></div>
+                    <div class="dropzone" data-category="neon_lamp"><img src="images/neon_lamp.jpg" alt=""></div>
+                    <div class="dropzone" data-category="transformer_house"><img src="images/transformer_house.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <button id="checkAnswersButton" class="btn btn-primary mt-3">Check Answers</button>
+        <audio id="successAudio" autoplay>
+          <source src="media/success.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <video id="fullscreenVideo" controls>
+            <source src="media/rickroll.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+</body>
+</html>

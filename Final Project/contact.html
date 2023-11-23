@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page - Nikola Tesla</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">Tesla's World</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="biography.html">Biography</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="inventions.html">Inventions</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                            <li id="toDoListDropdownItem"><a class="dropdown-item" href="#">To-Do List</a></li>
+                            <li id="countdownTimerDropdownItem"><a class="dropdown-item" href="#">Countdown Timer</a></li>
+                            <li id="quizDropdownItem"><a class="dropdown-item" href="quiz.html">Drag-and-Drop Quiz</a></li>
+                        </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+    <hr>
+    <div class="container mt-4">
+      <h2>Contact Us</h2>
+      <form onsubmit="return validateForm()">
+          <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your name">
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Your email">
+          </div>
+          <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <div class="success-message" id="successMessage"></div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <!-- Modal for To-Do List -->
+        <div class="modal fade" id="todoListModal" tabindex="-1" aria-labelledby="todoListModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="todoListModalLabel">To-Do List</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <!-- To-Do List Section -->
+                      <div class="container mt-5">
+                          <h1 class="mb-4">To-Do List</h1>
+                            <div class="input-group mb-3">
+                                <input type="text" id="taskInputModal" class="form-control" placeholder="New task" onkeydown="if (event.key === 'Enter') addTaskModal()">
+                                  <div class="input-group-append">
+                                      <button class="btn btn-success" onclick="addTaskModal()">+</button>
+                                  </div>
+                            </div>
+                      <ul id="taskListModal" class="list-group"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Countdown Timer -->
+      <div class="modal fade" id="countdownTimerModal" tabindex="-1" aria-labelledby="countdownTimerModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="countdownTimerModalLabel">Countdown Timer</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <!-- Timer countdown -->
+                      <div class="container mt-5">
+                          <div class="row justify-content-center">
+                              <div class="col-md-6">
+                                  <div class="countdown text-center">
+                                      <div class="input-group mb-3">
+                                          <input type="number" class="form-control" id="durationModal" placeholder="Set Timer (in seconds)">
+                                          <div class="input-group-append">
+                                              <button class="btn btn-primary" id="startButtonModal">Start</button>
+                                          </div>
+                                      </div>
+                                      <div id="timerModal" class="hidden display-4">0</div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <hr>
+  </body>

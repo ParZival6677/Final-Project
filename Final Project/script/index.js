@@ -1,46 +1,81 @@
-// Form Validation
-function validateForm() {
-    // Retrieving input values
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+$(document).ready(function() {
+    var current = 1, current_step, next_step, steps;
+    steps = $("fieldset").length;
 
-    let isValid = true;
+    $(".next").click(function() {
+        current_step = $(this).parent();
+        next_step = $(this).parent().next();
 
-    // Validation for the Name field
-    if (name.trim() === "") {
-        alert("Name is required");
-        isValid = false;
+        if (validateForm(current)) {
+            next_step.show();
+            current_step.hide();
+            setProgressBar(++current);
+        }
+    });
+
+    $(".previous").click(function() {
+        current_step = $(this).parent();
+        next_step = $(this).parent().prev();
+        next_step.show();
+        current_step.hide();
+        setProgressBar(--current);
+    });
+
+    $(".submit").click(function() {
+        if (validateForm(steps)) {
+            setProgressBar(steps);
+            alert("Thank you for submitting the form!");
+            resetForm();
+            current = 1;
+            $("fieldset").hide();
+            $("fieldset:eq(0)").show();
+            setProgressBar(current);
+        }
+    });
+
+    $("#contactNumber").on("input", function() {
+        this.value = this.value.replace(/[^\d]/g, "");
+    });
+
+    setProgressBar(current);
+
+    function setProgressBar(curStep) {
+        var percent = parseFloat(100 / steps) * curStep;
+        percent = percent.toFixed();
+        $(".progress-bar").css("width", percent + "%");
     }
 
-    // Validation for the Email field
-    if (email.trim() === "") {
-        alert("Email is required");
-        isValid = false;
-    } else if (!validateEmail(email)) {
-        alert("Invalid email format");
-        isValid = false;
+    function validateForm(step) {
+        const currentFieldset = $(`fieldset:eq(${step - 1})`);
+        const inputs = currentFieldset.find("input[type='text'], input[type='email'], textarea");
+        let isValid = true;
+
+        inputs.each(function() {
+            const value = $(this).val().trim();
+            if (value === "") {
+                if (step !== steps || ($(this).attr("name") !== "contactNumber")) {
+                    alert($(this).prev("label").text() + " is required");
+                    isValid = false;
+                    return false;
+                }
+            }
+        });
+
+        return isValid;
     }
 
-    // Validation for the Message field
-    if (message.trim() === "") {
-        alert("Message is required");
-        isValid = false;
+    $("input[type='text'], input[type='email'], textarea").keypress(function(event) {
+        if (event.which === 13 && current < steps) {
+            event.preventDefault();
+            $(this).closest("fieldset").find(".next").click();
+        }
+    });
+
+    function resetForm() {
+        $("form")[0].reset();
     }
+});
 
-    // If the form is valid, display a thank you message
-    if (isValid) {
-        alert("Thank you for submitting the form!");
-    }
-
-    return isValid;
-}
-
-// Validate email format using a regular expression
-function validateEmail(email) {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailRegex.test(email);
-}
 
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize Bootstrap dropdown

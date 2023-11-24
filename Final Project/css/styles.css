@@ -161,7 +161,7 @@ video {
   color: #020826;
 }
 
-.list-of-time {
+ .list-of-time {
   padding: 0;
   list-style: none;
 }
@@ -171,11 +171,6 @@ video {
   color: #716040;
   margin: 1em 0;
   transition: background-color 0.3s ease;
-}
-
-.list-of-time li:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
-    cursor: pointer; /* Change cursor on hover  */
 }
 
 .list-of-time time {
@@ -377,8 +372,8 @@ video {
     padding: 20px;
     box-sizing: border-box;
  }
- 
-#timer {
+
+#timerModal {
     font-size: 3rem;
     margin-top: 20px;
     animation: countdown 1s linear infinite;

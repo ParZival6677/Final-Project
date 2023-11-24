@@ -34,6 +34,16 @@
                   <li class="nav-item">
                       <a class="nav-link" href="contact.html">Contact</a>
                   </li>
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                            <li id="toDoListDropdownItem"><a class="dropdown-item" href="#">To-Do List</a></li>
+                            <li id="countdownTimerDropdownItem"><a class="dropdown-item" href="#">Countdown Timer</a></li>
+                            <li id="quizDropdownItem"><a class="dropdown-item" href="quiz.html">Drag-and-Drop Quiz</a></li>
+                        </ul>
+                  </li>
               </ul>
           </div>
       </div>
@@ -84,6 +94,60 @@
         </video>
 
     </div>
+    <!-- Modal for To-Do List -->
+      <div class="modal fade" id="todoListModal" tabindex="-1" aria-labelledby="todoListModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="todoListModalLabel">To-Do List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <!-- To-Do List Section -->
+                    <div class="container mt-5">
+                        <h1 class="mb-4">To-Do List</h1>
+                          <div class="input-group mb-3">
+                              <input type="text" id="taskInputModal" class="form-control" placeholder="New task" onkeydown="if (event.key === 'Enter') addTaskModal()">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" onclick="addTaskModal()">+</button>
+                                </div>
+                          </div>
+                    <ul id="taskListModal" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal for Countdown Timer -->
+    <div class="modal fade" id="countdownTimerModal" tabindex="-1" aria-labelledby="countdownTimerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="countdownTimerModalLabel">Countdown Timer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <!-- Timer countdown -->
+                    <div class="container mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="countdown text-center">
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" id="durationModal" placeholder="Set Timer (in seconds)">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" id="startButtonModal">Start</button>
+                                        </div>
+                                    </div>
+                                    <div id="timerModal" class="hidden display-4">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+

@@ -1,3 +1,4 @@
+// Multi Step Form
 $(document).ready(function() {
     var current = 1, current_step, next_step, steps;
     steps = $("fieldset").length;
@@ -350,6 +351,25 @@ $(document).ready(function() {
         }
     }
 });
+
+// Hover effect
+document.addEventListener("DOMContentLoaded", function() {
+    const timelineItems = document.querySelectorAll(".list-of-time li");
+
+    timelineItems.forEach(item => {
+        item.addEventListener("mouseover", function() {
+            this.style.backgroundColor = "#f0f0f0";
+            this.style.color = "#333";
+            this.style.cursor = "pointer";
+        });
+
+        item.addEventListener("mouseout", function() {
+            this.style.backgroundColor = "transparent";
+            this.style.color = "#000";
+        });
+    });
+});
+
 
 // Function to show/hide scroll-to-top button based on scroll position
 window.addEventListener("scroll", scrollFunction);
